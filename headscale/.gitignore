@@ -1,0 +1,10 @@
+headplane-storage/hp_persist.db
+headscale-storage/db.sqlite
+headscale-storage/noise_private.key
+headplane-storage/agent/tailscaled.log.conf
+headplane-storage/agent/tailscaled.state
+headplane-storage/agent_cache.json
+headscale-storage/db.sqlite-shm
+headscale-storage/db.sqlite-wal
+/headplane-storage/agent
+/headscale-storage

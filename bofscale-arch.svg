@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 1140 970" width="100%">
+  <defs>
+  <style>text { font-family: ui-monospace, "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas", monospace; }</style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#1a1a2e" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-mesh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#5a40a0" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-mesh-rev" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <path d="M8,0 L0,3 L8,6" fill="none" stroke="#5a40a0" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-victim" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#5a40a0" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-attack" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#18706e" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-cdn" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#2a5f9e" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrow-docker" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#1a5a9e" stroke-width="1.2"/>
+    </marker>
+
+    <symbol id="icon-monitor" viewBox="0 0 40 34">
+      <rect x="2" y="1" width="36" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="6" y="5" width="28" height="16" rx="1" fill="currentColor" opacity="0.15"/>
+      <line x1="20" y1="25" x2="20" y2="30" stroke="currentColor" stroke-width="2"/>
+      <line x1="12" y1="30" x2="28" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-server" viewBox="0 0 36 44">
+      <rect x="2" y="1" width="32" height="42" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="2" y1="15" x2="34" y2="15" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="2" y1="29" x2="34" y2="29" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="28" cy="8" r="2" fill="currentColor" opacity="0.6"/>
+      <circle cx="28" cy="22" r="2" fill="currentColor" opacity="0.6"/>
+      <circle cx="28" cy="36" r="2" fill="currentColor" opacity="0.6"/>
+      <line x1="8" y1="8" x2="22" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="8" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="8" y1="36" x2="22" y2="36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-cloud" viewBox="0 0 56 36">
+      <path d="M14,30 A10,10 0 0,1 8,14 A12,12 0 0,1 20,4 A14,14 0 0,1 44,8 A10,10 0 0,1 48,26 A6,6 0 0,1 42,30 Z"
+            fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="icon-cloudfront" viewBox="0 0 256 308">
+      <path d="M166.01 127.465l59.202-6.314 30.676 6.369.111.068-56.558 3.374-33.484-3.442.053-.055z" fill="#5E1F18"/><path d="M165.958 127.521l59.204-4.625.407-.593.002-73.044-.407-.835-59.206 15.397v63.7" fill="#8C3123"/><path d="M256 127.59l-30.838-4.694.002-74.472 30.835 15.428.001 63.738" fill="#E05243"/><path d="M165.958 180.115l.865.606 58.349 3.959 29.772-3.959 1.055-.579-56.557-3.475-33.484 3.448" fill="#F2B0A9"/><path d="M165.958 180.115l59.214 4.405.183.246-.045 73.942-.146.386-59.206-15.275v-63.704" fill="#8C3123"/><path d="M255.999 180.142l-30.827 4.378-.008 74.574 30.835-15.309v-63.643" fill="#E05243"/><path d="M89.119 127.408l-58.53-5.014L.195 127.44l-.193.151 56.557 3.374 32.874-3.376-.314-.18z" fill="#5E1F18"/><path d="M.002 127.59l30.557-4.474.899-.637v-73.2l-.899-.855L.002 63.855v63.735" fill="#8C3123"/><path d="M89.433 127.588l-58.874-4.472V48.424l58.877 15.397-.003 63.767" fill="#E05243"/><path d="M89.433 180.142l-1.351.985-57.523 4.313-29.583-4.313-.976-.985 56.559-3.475 32.874 3.475" fill="#F2B0A9"/><path d="M0 180.142l30.558 4.34.777.952.083 72.333-.859 1.327L.002 243.785 0 180.142" fill="#8C3123"/><path d="M89.433 180.142l-58.875 4.34.001 74.612 58.874-15.275v-63.677" fill="#E05243"/><path d="M189.104 189.66l-61.103-6.026-61.712 6.027.87.735 60.541 9.617 60.533-9.617.871-.736" fill="#F2B0A9"/><path d="M66.289 189.661l61.411 8.998.623.833.079 106.959-.702 1.186-61.411-30.706v-87.27" fill="#8C3123"/><path d="M189.104 189.66l-61.404 8.999v108.978l61.405-30.706-.001-87.271" fill="#E05243"/><path d="M128.001 123.933l-61.712-5.958.159-.091 61.249-9.502 61.222 9.524.186.069-61.104 5.958z" fill="#5E1F18"/><path d="M66.289 117.975l61.411-8.949.294-.268L127.858.165 127.7 0 66.289 30.709v87.266" fill="#8C3123"/><path d="M189.105 117.975l-61.405-8.949V0l61.405 30.709v87.266" fill="#E05243"/>
+    </symbol>
+
+    <symbol id="icon-shield" viewBox="0 0 32 38">
+      <path d="M16,2 L30,9 L30,20 C30,28 24,34 16,37 C8,34 2,28 2,20 L2,9 Z"
+            fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="2"/>
+      <rect x="11" y="16" width="10" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M13.5,16 L13.5,13 A2.5,2.5 0 0,1 18.5,13 L18.5,16" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+
+    <symbol id="icon-docker" viewBox="0 0 50 36">
+      <!-- Whale body -->
+      <path d="M2,22 C2,18 4,15 8,14 C8,12 10,11 13,11 L13,13 L38,13 C40,13 42,14 43,16 C46,15 49,15 49,15 C49,15 48,18 45,20 C45,28 38,32 28,32 C14,32 6,28 2,22 Z"
+            fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <!-- Containers on whale's back -->
+      <rect x="15" y="5" width="5" height="4.5" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <rect x="21" y="5" width="5" height="4.5" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <rect x="27" y="5" width="5" height="4.5" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <rect x="15" y="0" width="5" height="4.5" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <rect x="21" y="0" width="5" height="4.5" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+      <!-- Eye -->
+      <circle cx="7" cy="19" r="1.2" fill="currentColor" opacity="0.7"/>
+    </symbol>
+
+    <symbol id="icon-memory" viewBox="0 0 38 28">
+      <rect x="5" y="4" width="28" height="20" rx="2" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="1.8"/>
+      <rect x="10" y="8" width="18" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="8" y1="4" x2="8" y2="0" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="14" y1="4" x2="14" y2="0" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="20" y1="4" x2="20" y2="0" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="26" y1="4" x2="26" y2="0" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="30" y1="4" x2="30" y2="0" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="8" y1="24" x2="8" y2="28" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="14" y1="24" x2="14" y2="28" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="20" y1="24" x2="20" y2="28" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="26" y1="24" x2="26" y2="28" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="30" y1="24" x2="30" y2="28" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+
+    <symbol id="icon-no" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.2"/>
+    </symbol>
+
+    <symbol id="icon-pipe" viewBox="0 0 28 18">
+      <rect x="1" y="3" width="26" height="12" rx="6" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="9" y1="6" x2="9" y2="12" stroke="currentColor" stroke-width="1.3"/>
+      <line x1="14" y1="6" x2="14" y2="12" stroke="currentColor" stroke-width="1.3"/>
+      <line x1="19" y1="6" x2="19" y2="12" stroke="currentColor" stroke-width="1.3"/>
+    </symbol>
+
+    <symbol id="icon-terminal" viewBox="0 0 36 28">
+      <rect x="1" y="1" width="34" height="26" rx="3" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="1.8"/>
+      <polyline points="8,10 14,14 8,18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="17" y1="18" x2="26" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+
+  <!-- ==================== VICTIM ZONE ==================== -->
+  <rect x="20" y="75" width="390" height="510" rx="12" fill="#fef7ed" stroke="#c06a10" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="40" y="97" font-size="15" font-weight="600" fill="#7a3d08" letter-spacing="0.5">VICTIM NETWORK</text>
+  <text x="280" y="97" font-size="12.5" fill="#7a3d08" opacity="0.7">192.168.0.0/24</text>
+
+  <!-- DC01 box (inside victim zone, outside victim-ws01) -->
+  <rect x="40" y="110" width="160" height="55" rx="5" fill="#ffffff" stroke="#c06a10" stroke-width="1" stroke-dasharray="4,2"/>
+  <use href="#icon-server" x="50" y="116" width="16" height="22" color="#c06a10"/>
+  <text x="72" y="132" font-size="13.8" font-weight="600" fill="#7a3d08">dc01</text>
+  <text x="50" y="152" font-size="11.2" fill="#5f6368">192.168.0.10</text>
+
+  <!-- ADCS box (inside victim zone, outside victim-ws01) -->
+  <rect x="225" y="110" width="165" height="55" rx="5" fill="#ffffff" stroke="#c06a10" stroke-width="1" stroke-dasharray="4,2"/>
+  <use href="#icon-server" x="235" y="116" width="16" height="22" color="#c06a10"/>
+  <text x="257" y="132" font-size="13.8" font-weight="600" fill="#7a3d08">adcs</text>
+  <text x="235" y="152" font-size="11.2" fill="#5f6368">192.168.0.20</text>
+
+  <!-- Compromised Host box -->
+  <rect x="40" y="180" width="350" height="390" rx="8" fill="#ffffff" stroke="#c06a10" stroke-width="1.5"/>
+  <use href="#icon-monitor" x="52" y="188" width="22" height="18" color="#c06a10"/>
+  <text x="78" y="202" font-size="15" font-weight="600" fill="#7a3d08">victim-ws01</text>
+  <text x="190" y="202" font-size="11.2" fill="#7a3d08" opacity="0.7">compromised host</text>
+  <text x="78" y="216" font-size="11.2" fill="#5f6368">192.168.0.50</text>
+
+  <!-- C2 Implant Process (large container holding all BOF-PEs) -->
+  <rect x="55" y="225" width="320" height="330" rx="7" fill="#fef7ed" stroke="#c06a10" stroke-width="1" opacity="0.8"/>
+  <image x="338" y="234" width="24" height="24" href="data:image/png;base64,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"/>
+  <text x="215" y="245" text-anchor="middle" font-size="13.8" font-weight="600" fill="#7a3d08">C2 Implant Process (msedge.exe)</text>
+  <text x="215" y="260" text-anchor="middle" font-size="11.2" fill="#5a40a0" font-weight="600">100.64.0.2  victim-ws01.target.tun</text>
+  <text x="215" y="273" text-anchor="middle" font-size="10" fill="#5a40a0" opacity="0.7">userspace IP stack (no TUN adapter)</text>
+
+  <!-- tailscaled (daemon) inside implant -->
+  <rect x="70" y="285" width="290" height="85" rx="6" fill="#f0ecf8" stroke="#5a40a0" stroke-width="1.5"/>
+  <use href="#icon-memory" x="80" y="292" width="26" height="20" color="#5a40a0"/>
+  <text x="112" y="307" font-size="16.2" font-weight="700" fill="#5a40a0">tailscaled</text>
+  <text x="260" y="307" font-size="11.2" fill="#5a40a0" opacity="0.7">Go/CGO BOF-PE</text>
+  <text x="90" y="325" font-size="11.2" fill="#5f6368">In-memory Tailscale daemon, async BOF</text>
+  <text x="90" y="340" font-size="11.2" fill="#5f6368">userspace networking  |  mem: state</text>
+  <use href="#icon-no" x="90" y="348" width="13" height="13" color="#5a40a0"/>
+  <text x="107" y="360" font-size="10" fill="#5a40a0" opacity="0.8">no driver</text>
+  <use href="#icon-no" x="170" y="348" width="13" height="13" color="#5a40a0"/>
+  <text x="187" y="360" font-size="10" fill="#5a40a0" opacity="0.8">no service</text>
+  <use href="#icon-no" x="250" y="348" width="13" height="13" color="#5a40a0"/>
+  <text x="267" y="360" font-size="10" fill="#5a40a0" opacity="0.8">no children</text>
+
+  <!-- tailscale (client) inside implant -->
+  <rect x="70" y="400" width="140" height="65" rx="6" fill="#edf2fa" stroke="#2a5f9e" stroke-width="1.2"/>
+  <use href="#icon-terminal" x="78" y="406" width="20" height="16" color="#2a5f9e"/>
+  <text x="102" y="419" font-size="13.8" font-weight="600" fill="#1a3d6e">tailscale</text>
+  <text x="80" y="436" font-size="10.6" fill="#5f6368">C++ BOF-PE</text>
+  <text x="80" y="450" font-size="10.6" fill="#5f6368">HTTP/1.0 over pipe</text>
+
+  <!-- socksportfwd inside implant -->
+  <rect x="220" y="400" width="140" height="65" rx="6" fill="#edf7f7" stroke="#18706e" stroke-width="1.2"/>
+  <use href="#icon-pipe" x="228" y="408" width="20" height="14" color="#18706e"/>
+  <text x="252" y="419" font-size="12.5" font-weight="600" fill="#0e4846">socksportfwd</text>
+  <text x="230" y="436" font-size="10.6" fill="#5f6368">TCP port forwarder</text>
+  <text x="230" y="450" font-size="10.6" fill="#5f6368">async BOF-PE</text>
+
+  <!-- Connection arrows: client to daemon -->
+  <line x1="140" y1="400" x2="140" y2="373" stroke="#2a5f9e" stroke-width="1.3" marker-end="url(#arrow-cdn)"/>
+  <text x="146" y="390" font-size="10" fill="#2a5f9e">named pipe</text>
+
+  <!-- Connection arrows: socksportfwd to daemon -->
+  <line x1="290" y1="400" x2="290" y2="373" stroke="#18706e" stroke-width="1.3" marker-end="url(#arrow-attack)"/>
+  <text x="296" y="390" font-size="10" fill="#18706e">SOCKS5</text>
+
+  <!-- SOCKS listener note -->
+  <text x="215" y="488" text-anchor="middle" font-size="10" fill="#5f6368">SOCKS5 on 0.0.0.0:1080</text>
+
+  <!-- In-memory note -->
+  <text x="215" y="505" text-anchor="middle" font-size="10" fill="#5a40a0" opacity="0.6">everything runs in-process, no disk artifacts</text>
+
+
+  <!-- ==================== CDN ZONE ==================== -->
+  <rect x="495" y="130" width="200" height="310" rx="12" fill="#edf2fa" stroke="#2a5f9e" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="595" y="152" text-anchor="middle" font-size="15" font-weight="600" fill="#1a3d6e" letter-spacing="0.5">CDN EDGE</text>
+
+  <use href="#icon-cloudfront" x="560" y="165" width="68" height="68" color="#2a5f9e"/>
+  <text x="595" y="250" text-anchor="middle" font-size="17.5" font-weight="700" fill="#1a3d6e">CloudFront</text>
+  <text x="595" y="268" text-anchor="middle" font-size="11.2" fill="#1a3d6e" opacity="0.7">or Fastly</text>
+
+  <rect x="520" y="278" width="148" height="36" rx="5" fill="#ffffff" stroke="#2a5f9e" stroke-width="1"/>
+  <text x="594" y="293" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a3d6e">RFC 6455 WebSocket</text>
+  <text x="594" y="306" text-anchor="middle" font-size="10" fill="#5f6368">Upgrade: websocket</text>
+
+  <text x="595" y="338" text-anchor="middle" font-size="10.6" fill="#1a3d6e" opacity="0.8">subprotocol: derp | ts2021</text>
+
+  <text x="595" y="368" text-anchor="middle" font-size="11.2" fill="#1a3d6e">:443 TLS</text>
+  <text x="595" y="383" text-anchor="middle" font-size="10" fill="#5f6368">standard HTTPS port</text>
+
+
+  <!-- ==================== ORIGIN ZONE ==================== -->
+  <rect x="740" y="130" width="380" height="410" rx="12" fill="#edf7f2" stroke="#28785a" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="760" y="152" font-size="15" font-weight="600" fill="#1a4a30" letter-spacing="0.5">ORIGIN SERVER</text>
+
+  <!-- Reverse Proxy (outside Docker Compose) -->
+  <rect x="760" y="168" width="340" height="42" rx="6" fill="#ffffff" stroke="#28785a" stroke-width="1"/>
+  <text x="930" y="186" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1a4a30">Reverse Proxy  (Caddy / Apache2)</text>
+  <text x="930" y="200" text-anchor="middle" font-size="10" fill="#5f6368">read_timeout 0  |  write_timeout 0</text>
+
+  <!-- Reverse proxy internal arrows -->
+  <line x1="870" y1="210" x2="870" y2="250" stroke="#1a5a9e" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-docker)"/>
+  <text x="876" y="234" font-size="9.4" fill="#1a5a9e">:5566</text>
+  <line x1="960" y1="210" x2="960" y2="325" stroke="#1a5a9e" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrow-docker)"/>
+  <text x="966" y="270" font-size="9.4" fill="#1a5a9e">:3478</text>
+
+  <!-- Docker Compose container -->
+  <rect x="752" y="222" width="356" height="290" rx="8" fill="#edf2fa" stroke="#1a5a9e" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <use href="#icon-docker" x="762" y="228" width="18" height="14" color="#1a5a9e"/>
+  <text x="784" y="240" font-size="12.5" font-weight="600" fill="#14406e">Docker Compose</text>
+
+  <rect x="765" y="252" width="330" height="65" rx="6" fill="#ffffff" stroke="#28785a" stroke-width="1.5"/>
+  <use href="#icon-server" x="775" y="260" width="22" height="28" color="#28785a"/>
+  <text x="803" y="274" font-size="16.2" font-weight="700" fill="#1a4a30">Headscale</text>
+  <text x="905" y="274" font-size="11.2" fill="#1a4a30" opacity="0.7">:5566</text>
+  <text x="803" y="292" font-size="11.2" fill="#5f6368">TS2021 control plane  |  self-hosted</text>
+  <text x="803" y="306" font-size="10" fill="#5f6368">logtail disabled  |  ephemeral nodes 10m</text>
+
+  <rect x="765" y="327" width="330" height="58" rx="6" fill="#ffffff" stroke="#28785a" stroke-width="1.2"/>
+  <use href="#icon-shield" x="775" y="335" width="20" height="24" color="#28785a"/>
+  <text x="803" y="349" font-size="15" font-weight="600" fill="#1a4a30">Embedded DERP Relay</text>
+  <text x="803" y="365" font-size="11.2" fill="#5f6368">verify_clients: true</text>
+  <text x="803" y="377" font-size="10" fill="#5f6368">region 999  |  no upstream Tailscale DERP</text>
+
+  <rect x="765" y="395" width="330" height="50" rx="6" fill="#ffffff" stroke="#28785a" stroke-width="1"/>
+  <use href="#icon-monitor" x="775" y="402" width="20" height="16" color="#28785a"/>
+  <text x="803" y="417" font-size="13.8" font-weight="600" fill="#1a4a30">Headplane</text>
+  <text x="885" y="417" font-size="11.2" fill="#1a4a30" opacity="0.7">:3000</text>
+  <text x="803" y="433" font-size="10" fill="#5f6368">Admin UI  |  SSH tunnel only, not via CDN</text>
+
+  <rect x="765" y="455" width="330" height="36" rx="4" fill="#edf7f2" stroke="#28785a" stroke-width="0.8"/>
+  <text x="785" y="470" font-size="10" fill="#1a4a30" opacity="0.8">init: config patching, user creation, pre-auth keys,</text>
+  <text x="785" y="482" font-size="10" fill="#1a4a30" opacity="0.8">ACL policy auto-approve, cookie secret generation</text>
+
+  <text x="930" y="530" text-anchor="middle" font-size="10" fill="#1a4a30" opacity="0.6">HEADSCALE_HOSTNAME=d1a2b3c4e5f6g7.cloudfront.net</text>
+
+
+  <!-- ==================== ENCRYPTED TUNNEL ==================== -->
+
+  <!-- Tunnel outer walls -->
+  <path d="M175,595 L175,790" fill="none" stroke="#5a40a0" stroke-width="2" opacity="0.4"/>
+  <path d="M255,595 L255,790" fill="none" stroke="#5a40a0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Tunnel fill -->
+  <rect x="175" y="595" width="80" height="195" rx="0" fill="#f0ecf8" opacity="0.35"/>
+
+  <!-- Mesh cross-hatching inside tunnel -->
+  <line x1="175" y1="610" x2="255" y2="630" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="630" x2="255" y2="650" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="650" x2="255" y2="670" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="670" x2="255" y2="690" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="690" x2="255" y2="710" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="710" x2="255" y2="730" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="730" x2="255" y2="750" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="750" x2="255" y2="770" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="175" y1="770" x2="255" y2="790" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="610" x2="175" y2="630" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="630" x2="175" y2="650" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="650" x2="175" y2="670" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="670" x2="175" y2="690" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="690" x2="175" y2="710" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="710" x2="175" y2="730" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="730" x2="175" y2="750" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="750" x2="175" y2="770" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+  <line x1="255" y1="770" x2="175" y2="790" stroke="#5a40a0" stroke-width="0.7" opacity="0.3"/>
+
+  <!-- Flowing dashes (encrypted traffic) -->
+  <line x1="195" y1="600" x2="195" y2="785" stroke="#5a40a0" stroke-width="1.5" stroke-dasharray="4,8" opacity="0.5"/>
+  <line x1="215" y1="605" x2="215" y2="790" stroke="#5a40a0" stroke-width="1.5" stroke-dasharray="4,8" opacity="0.6"/>
+  <line x1="235" y1="598" x2="235" y2="783" stroke="#5a40a0" stroke-width="1.5" stroke-dasharray="4,8" opacity="0.5"/>
+
+  <!-- Encrypted padlock centered in tunnel -->
+  <use href="#icon-shield" x="201" y="680" width="28" height="24" color="#5a40a0"/>
+
+  <!-- Tunnel arrows (bidirectional) -->
+  <line x1="215" y1="585" x2="215" y2="598" stroke="#5a40a0" stroke-width="2" marker-start="url(#arrow-mesh-rev)"/>
+  <line x1="215" y1="785" x2="215" y2="798" stroke="#5a40a0" stroke-width="2" marker-end="url(#arrow-mesh)"/>
+
+  <!-- Tunnel label -->
+  <text x="270" y="682" font-size="12.5" font-weight="700" fill="#5a40a0">Tailscale</text>
+  <text x="270" y="696" font-size="12.5" font-weight="700" fill="#5a40a0">Tunnel</text>
+  <text x="270" y="712" font-size="10" fill="#5f6368">via DERP relay</text>
+  <text x="270" y="726" font-size="10" fill="#5f6368">through CDN</text>
+
+
+  <!-- ==================== ATTACK VM ZONE ==================== -->
+  <rect x="20" y="810" width="390" height="210" rx="12" fill="#edf7f7" stroke="#18706e" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="40" y="832" font-size="15" font-weight="600" fill="#0e4846" letter-spacing="0.5">ATTACK VM</text>
+  <text x="170" y="832" font-size="11.2" fill="#0e4846" opacity="0.7">operator.target.tun  100.64.0.1</text>
+
+  <rect x="40" y="845" width="350" height="60" rx="6" fill="#ffffff" stroke="#18706e" stroke-width="1.5"/>
+  <use href="#icon-server" x="50" y="853" width="20" height="26" color="#18706e"/>
+  <text x="78" y="867" font-size="15" font-weight="700" fill="#0e4846">Modified tailscaled</text>
+  <text x="78" y="883" font-size="11.2" fill="#5f6368">Full install with disk state, same WS patches</text>
+  <text x="78" y="896" font-size="10" fill="#5f6368">--state /var/lib/tailscale/tailscaled.state</text>
+
+  <rect x="40" y="920" width="165" height="46" rx="5" fill="#ffffff" stroke="#18706e" stroke-width="1"/>
+  <use href="#icon-terminal" x="50" y="926" width="18" height="14" color="#18706e"/>
+  <text x="72" y="939" font-size="12.5" font-weight="600" fill="#0e4846">ntlmrelayx</text>
+  <text x="50" y="955" font-size="10" fill="#5f6368">relay via port forward</text>
+
+  <rect x="225" y="920" width="165" height="46" rx="5" fill="#ffffff" stroke="#18706e" stroke-width="1"/>
+  <use href="#icon-terminal" x="235" y="926" width="18" height="14" color="#18706e"/>
+  <text x="257" y="939" font-size="12.5" font-weight="600" fill="#0e4846">other tooling</text>
+  <text x="235" y="955" font-size="10" fill="#5f6368">ping, smbclient, etc.</text>
+
+
+  <!-- ==================== CONNECTION ARROWS ==================== -->
+
+  <!-- Victim to CDN -->
+  <path d="M390,327 L440,327 L440,260 L495,260" fill="none" stroke="#5a40a0" stroke-width="1.8" marker-end="url(#arrow-victim)"/>
+  <text x="445" y="254" font-size="10.6" fill="#5a40a0" font-weight="600">WS :443</text>
+
+  <!-- CDN to Origin -->
+  <path d="M695,260 L720,260 L720,189 L740,189" fill="none" stroke="#2a5f9e" stroke-width="1.8" marker-end="url(#arrow-cdn)"/>
+
+  <!-- Attack VM to CDN -->
+  <path d="M410,875 L440,875 L440,380 L495,380" fill="none" stroke="#18706e" stroke-width="1.8" marker-end="url(#arrow-attack)"/>
+  <text x="445" y="374" font-size="10.6" fill="#18706e" font-weight="600">WS :443</text>
+
+
+  <!-- ==================== LEGEND ==================== -->
+  <rect x="740" y="570" width="380" height="115" rx="8" fill="#ffffff" stroke="#1a1a2e" stroke-width="0.5" opacity="0.5"/>
+  <text x="760" y="590" font-size="12.5" font-weight="600" fill="#1a1a2e" opacity="0.7">Traffic Flow</text>
+
+  <line x1="760" y1="605" x2="800" y2="605" stroke="#5a40a0" stroke-width="1.5"/>
+  <text x="808" y="609" font-size="11.2" fill="#5f6368">Victim to CDN (WebSocket upgrade)</text>
+
+  <line x1="760" y1="625" x2="800" y2="625" stroke="#18706e" stroke-width="1.5"/>
+  <text x="808" y="629" font-size="11.2" fill="#5f6368">Attack VM to CDN (WebSocket upgrade)</text>
+
+  <line x1="760" y1="645" x2="800" y2="645" stroke="#5a40a0" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="808" y="649" font-size="11.2" fill="#5f6368">Tailscale tunnel (via DERP relay)</text>
+
+  <line x1="760" y1="665" x2="800" y2="665" stroke="#2a5f9e" stroke-width="1.5"/>
+  <text x="808" y="669" font-size="11.2" fill="#5f6368">CDN to origin proxy</text>
+</svg>

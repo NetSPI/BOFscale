@@ -1,0 +1,90 @@
+services:
+
+  headplane-init:
+    image: docker:cli
+    container_name: headplane-init
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './headplane-init.sh:/headplane-init.sh'
+      - './headplane-config.yaml:/headplane-config.yaml'           
+    command: ["/bin/sh", "-c", "/headplane-init.sh"]
+    restart: "no"
+    environment:
+      - HEADSCALE_USER=${HEADSCALE_USER:-default}       
+    networks:
+      - headscale-net 
+    depends_on:
+      headscale:
+        condition: service_healthy      
+      
+  headscale-init:
+    image: alpine:3.20
+    container_name: headscale-init
+    volumes:
+      - './headscale-init.sh:/headscale-init.sh'
+      - './headscale-config.yaml:/headscale-config.yaml'   
+      - './derpmap.yaml:/derpmap.yaml'          
+    command: ["/bin/ash", "-c", "/bin/ash /headscale-init.sh"]
+    restart: "no"
+    environment:
+      - HEADSCALE_HOSTNAME=${HEADSCALE_HOSTNAME}       
+    networks:
+      - headscale-net 
+
+
+  headplane:
+    image: ghcr.io/tale/headplane:latest
+    container_name: headplane
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - './headplane-config.yaml:/etc/headplane/config.yaml:Z'
+      - './headplane-storage:/var/lib/headplane'
+      - './headscale-config.yaml:/etc/headscale/config.yaml'
+      - './headscale-dns_records.json:/etc/headscale/dns_records.json'
+
+      # Access to the Docker socket to allow headplane to query headscale. #TODO use docker socket proxy
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    environment:
+      TZ: 'UTC' 
+      HEADPLANE_LOAD_ENV_OVERRIDES: true      
+      HEADPLANE_HEADSCALE_CONFIG_PATH: '/etc/headscale/config.yaml'   
+    depends_on:
+      headplane-init:
+        condition: service_completed_successfully  
+      headscale:
+        condition: service_healthy         
+    networks:
+      - headscale-net          
+      
+  headscale:
+    image: headscale/headscale:stable
+    container_name: headscale
+    restart: unless-stopped
+    command: serve
+    labels:
+      me.tale.headplane.target: headscale
+    ports:
+      - '5566:5566'
+      - '3478:3478/udp'      
+    volumes:
+      - './headscale-config.yaml:/etc/headscale/config.yaml'
+      - './derpmap.yaml:/etc/headscale/derpmap.yaml'      
+      - './headscale-dns_records.json:/etc/headscale/dns_records.json'
+      - './headscale-storage:/var/lib/headscale'
+      - './policy.json:/policy.json'
+    healthcheck:
+      test: ["CMD", "headscale", "health"]
+      interval: 5s
+      timeout: 3s
+      retries: 5  
+    networks:
+      - headscale-net 
+    depends_on:
+      headscale-init:
+        condition: service_completed_successfully        
+
+networks:
+  headscale-net:
+    driver: bridge      

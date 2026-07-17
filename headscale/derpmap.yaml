@@ -1,0 +1,11 @@
+regions:
+  999:
+    regionid: 999
+    regioncode: hs
+    regionname: Headscale
+    nodes:
+      - name: 999a
+        regionid: 999
+        hostname:
+        canport80: false
+        derpport: 443
